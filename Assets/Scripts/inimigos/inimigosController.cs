@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class inimigosController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject inimigo;
+
+
     void Start()
+    {
+        SpawnHorda();
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnHorda()
     {
-        
+        for (int i = 0; i < 5; i++){
+            Instantiate(inimigo, new Vector2(0, 0), Quaternion.identity);
+        }
     }
 }
