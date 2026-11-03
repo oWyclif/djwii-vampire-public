@@ -5,7 +5,7 @@ using UnityEngine;
 public class simplesStateMov : simplesBaseState
 {
     //Transform simplesTransform;
-    float simplesMoverSpeed = 0.03f;
+    float simplesMoverSpeed = 0.01f;
 
 
     public GameObject player; 
