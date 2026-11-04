@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5556225938900677250}
   - component: {fileID: 1018638074722949186}
   - component: {fileID: 5918955025328001505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: in_complexo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e46db52ea1398c54695a5ab3a4d761db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 50
+  currentHealth: 50
+  dano: 20
 --- !u!114 &5918955025328001505
 MonoBehaviour:
   m_ObjectHideFlags: 0

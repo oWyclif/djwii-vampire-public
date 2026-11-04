@@ -6,10 +6,13 @@ public class PlayerAttributes : MonoBehaviour
     public float moveSpeed;
     public float friction = 0.95f;
     public Rigidbody2D rb;
+    public Transform tr;
 
     [Header("Combate")]
     public float maxHealth;
+    public float currentHealth;
     public Collider2D hitBox;
     public Collider2D damageBox;
     public float danoAtual;
+    
 }
