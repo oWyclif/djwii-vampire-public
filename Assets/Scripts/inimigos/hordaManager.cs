@@ -8,11 +8,7 @@ public class hordaManager : MonoBehaviour
 
     public hordaTipoComplexa HordaComplexa = new hordaTipoComplexa();
     public hordaTipoSimples HordaSimples = new hordaTipoSimples();
-
-    [SerializeField] GameObject[] inimigos;
-
     IEnumerator coroutineHorda;
-    IEnumerator coroutineWait;
 
     public void Awake()
     {

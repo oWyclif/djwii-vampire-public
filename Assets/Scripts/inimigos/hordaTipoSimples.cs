@@ -20,11 +20,6 @@ public class hordaTipoSimples : hordaBase
 
         //Debug.Log("Horda Simples iniciada, objeto definido como " + this.Object + " Coordenadas definidas como: " + this.Coord);
 
-        horda.CoroutineStarter(this, 
-                                Cooldown, 
-                                Object, 
-                                Amount, 
-                                Coord, 
-                                Area);
+        horda.CoroutineStarter(this, Cooldown, Object, Amount, Coord, Area);
     }
 }
