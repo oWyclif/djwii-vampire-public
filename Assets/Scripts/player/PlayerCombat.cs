@@ -16,15 +16,6 @@ public class PlayerCombat : MonoBehaviour, IDamageable
         Attack();
     }
 
-    /*
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        IDamageable obj = collision.GetComponent<IDamageable>();
-        
-        obj?.TakeDamage(playerAtr.danoAtual);
-    }
-    */
-
     public void Attack()
     {
         Debug.Log("Attack called");
@@ -37,7 +28,6 @@ public class PlayerCombat : MonoBehaviour, IDamageable
             {
                 IDamageable obj = inimigoColisor.GetComponent<IDamageable>();
                 obj?.TakeDamage(playerAtr.danoAtual);
-
             }
         }
     }
