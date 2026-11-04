@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3133149066214327050}
   - component: {fileID: 7557005489489911917}
   - component: {fileID: 5556225938900677250}
+  - component: {fileID: 5672191637655120754}
+  - component: {fileID: 7808541012101401704}
   m_Layer: 0
   m_Name: in_simples
   m_TagString: Untagged
@@ -116,7 +118,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7557005489489911917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +179,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transform: {fileID: 7152417444999889245}
   simplesGO: {fileID: 3443383770020437194}
+--- !u!114 &5672191637655120754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3443383770020437194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46db52ea1398c54695a5ab3a4d761db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+--- !u!114 &7808541012101401704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3443383770020437194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439be6626b4d90e42b14fe5dab5022b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simplesAtr: {fileID: 5672191637655120754}

@@ -15,12 +15,8 @@ public class simplesStateManager : MonoBehaviour
 
     void Start()
     {
-        //Transform = simplesGO.GetComponent<Transform>();
-
         currentState = IdleState;
 
-        // Depois de definir o state do simples como idle, rodamos a função "EnterState();
-        // que ele herda do "template" (simplesBaseState).
         currentState.EnterState(this);
 
         //Debug.Log(this.gameObject);

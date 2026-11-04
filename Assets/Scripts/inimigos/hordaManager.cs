@@ -20,7 +20,7 @@ public class hordaManager : MonoBehaviour
     {
         hordaAtual = horda;
 
-        Debug.Log("Horda definida, estamos na " + horda + " ela possui: " + horda.Amount + " Inimigos.");
+        //Debug.Log("Horda definida, estamos na " + horda + " ela possui: " + horda.Amount + " Inimigos.");
     }
 
     public void CoroutineStarter(hordaBase crHorda, 
@@ -33,7 +33,7 @@ public class hordaManager : MonoBehaviour
         coroutineHorda = SpawnHorda(crHorda, crCooldown, crObject, crAmount, crCoord, crArea);
         StartCoroutine(coroutineHorda);
 
-        Debug.Log("CoroutineStarter rodou. A horda veio e suas coordenadas são " + crCoord);
+        //Debug.Log("CoroutineStarter rodou. A horda veio e suas coordenadas são " + crCoord);
     }
 
     public IEnumerator SpawnHorda(hordaBase horda,
@@ -43,18 +43,18 @@ public class hordaManager : MonoBehaviour
         Vector2         Coord,
         float           Area)
     {
-        Debug.Log("Coroutine rodando");
+        //Debug.Log("Coroutine rodando");
 
         hordaAtual = horda;
         
         for (int i = 0; i < Amount; i++){
             
-            Debug.Log("For loop Iniciado. O Object é " + Object + Cooldown);
+            //Debug.Log("For loop Iniciado. O Object é " + Object + Cooldown);
 
             Instantiate(Object, new Vector2(Random.Range(Coord.x - Area, Coord.x + Area), 
                                             Random.Range(Coord.y - Area, Coord.y + Area)), Quaternion.identity);
 
-            Debug.Log("Inimigo spawnado");
+            //Debug.Log("Inimigo spawnado");
                 
             yield return new WaitForSeconds(Cooldown);
         }

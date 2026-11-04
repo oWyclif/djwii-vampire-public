@@ -1,29 +1,39 @@
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 
 public class playerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
 
-    [Header("Movimentação")]
-    public float moveSpeed;
+    //Instanciando o script de Atributos do player (PlayerAttributes) e o nomeando (Attributes)
+    public PlayerAttributes playerAtr;
 
+    // Declarando variáveis que serão puxadas dos atributos
+    private Rigidbody2D _rb;
+    private float _moveSpeed;
+    private float _friction;
+
+    //Outras variáveis, que não estão nos atributos
     bool moving = false;
-
     Vector2 movDirection;
 
-    public float friction = 0.95f;
+    public void Awake()
+    {
+        _moveSpeed = playerAtr.moveSpeed;
+        _friction = playerAtr.friction;
+        _rb = playerAtr.rb;
+    }
 
     void FixedUpdate()
     {
         if(moving){
 
-            rb.linearVelocity = movDirection * moveSpeed;
+            _rb.linearVelocity = movDirection * _moveSpeed;
 
         }else{
 
-            rb.linearVelocity *= friction;
+            _rb.linearVelocity *= _friction;
 
         }
     }
