@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7557005489489911917}
   - component: {fileID: 5556225938900677250}
   m_Layer: 0
-  m_Name: inimigo
+  m_Name: in_simples
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

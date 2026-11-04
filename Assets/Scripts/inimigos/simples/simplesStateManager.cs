@@ -23,7 +23,7 @@ public class simplesStateManager : MonoBehaviour
         // que ele herda do "template" (simplesBaseState).
         currentState.EnterState(this);
 
-        Debug.Log(this.gameObject);
+        //Debug.Log(this.gameObject);
     }
 
     void Update()
