@@ -4,70 +4,64 @@ using System.Collections.Generic;
 
 public class hordaManager : MonoBehaviour
 {
-    //public GameObject inimigo;
-    IEnumerator coroutineHorda;
-    //public Vector2 _hordaCoord;
-
     public hordaBase hordaAtual;
 
     public hordaTipoComplexa HordaComplexa = new hordaTipoComplexa();
     public hordaTipoSimples HordaSimples = new hordaTipoSimples();
 
+    [SerializeField] GameObject[] inimigos;
 
-    void Start()
+    IEnumerator coroutineHorda;
+    IEnumerator coroutineWait;
+
+    public void Awake()
     {
-        /*
-        _hordaCoord = new Vector2(3, 3);
-        coroutineHorda = spawnHorda(3f, inimigo, 6, _hordaCoord, 2f);
-        StartCoroutine(coroutineHorda);
-        */
-
-        hordaAtual = HordaSimples;
+        hordaAtual = HordaComplexa;
         hordaAtual.HordaStart(this);
-        
-
     }
 
-    void FixedUpdate()
+    public void StartHorda(hordaBase horda)
     {
+        hordaAtual = horda;
+
+        Debug.Log("Horda definida, estamos na " + horda + " ela possui: " + horda.Amount + " Inimigos.");
     }
 
-
-    
-    public void CoroutineStarter(hordaBase horda)
+    public void CoroutineStarter(hordaBase crHorda, 
+                                float crCooldown, 
+                                Object crObject, 
+                                int crAmount, 
+                                Vector2 crCoord, 
+                                float crArea)
     {
-        coroutineHorda = spawnHorda(horda);
+        coroutineHorda = SpawnHorda(crHorda, crCooldown, crObject, crAmount, crCoord, crArea);
+        StartCoroutine(coroutineHorda);
 
-        this.StartCoroutine(coroutineHorda);
+        Debug.Log("CoroutineStarter rodou. A horda veio e suas coordenadas são " + crCoord);
     }
 
-
-    // Essa construção abaixo é igual a "IEnumerator spawnHorda(float hordaCool, int hordaAmount [...])". 
-    // Está disposto dessa forma para visualização mais fácil
-    IEnumerator spawnHorda(hordaBase horda)
-        /*
+    public IEnumerator SpawnHorda(hordaBase horda,
         float           Cooldown,
         Object          Object,
         int             Amount,
         Vector2         Coord,
         float           Area)
-        */
     {
-        hordaAtual = horda;
-        //Debug.Log("Coroutine rodando");
-        
-        //for (int i = 0; i < Amount; i++){
-            
-            Debug.Log("For loop Iniciado. O Object é " + horda.Object + horda.Cooldown);
+        Debug.Log("Coroutine rodando");
 
-            Instantiate(horda.Object, new Vector2(Random.Range(horda.Coord.x - horda.Area, horda.Coord.x + horda.Area), 
-                                            Random.Range(horda.Coord.y - horda.Area, horda.Coord.y + horda.Area)), Quaternion.identity);
+        hordaAtual = horda;
+        
+        for (int i = 0; i < Amount; i++){
+            
+            Debug.Log("For loop Iniciado. O Object é " + Object + Cooldown);
+
+            Instantiate(Object, new Vector2(Random.Range(Coord.x - Area, Coord.x + Area), 
+                                            Random.Range(Coord.y - Area, Coord.y + Area)), Quaternion.identity);
 
             Debug.Log("Inimigo spawnado");
                 
-            yield return new WaitForSeconds(horda.Cooldown);
-        //}
+            yield return new WaitForSeconds(Cooldown);
+        }
     }
-    
 }
 

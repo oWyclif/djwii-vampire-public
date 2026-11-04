@@ -13,4 +13,9 @@ public class hordaBase
     {   
 
     }
+
+    public virtual void HordaSpawn(hordaManager horda)
+    {
+        
+    }
 }

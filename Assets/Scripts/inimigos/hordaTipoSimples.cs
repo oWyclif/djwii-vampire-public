@@ -11,15 +11,20 @@ public class hordaTipoSimples : hordaBase
     public new Vector2 Coord;
     public new float Area            = 3f;
 
+
+
     public override void HordaStart(hordaManager horda)
     {
         Object = Resources.Load("in_simples");
         Coord = new Vector2(3,3);
 
-        Debug.Log("Horda Simples iniciada, objeto definido como " + this.Object);
+        //Debug.Log("Horda Simples iniciada, objeto definido como " + this.Object + " Coordenadas definidas como: " + this.Coord);
 
-        //horda.CoroutineStarter(this);
-
-        horda.CoroutineStarter(horda.HordaSimples);
+        horda.CoroutineStarter(this, 
+                                Cooldown, 
+                                Object, 
+                                Amount, 
+                                Coord, 
+                                Area);
     }
 }
