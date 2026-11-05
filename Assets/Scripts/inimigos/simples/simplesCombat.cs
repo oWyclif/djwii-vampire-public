@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Numerics;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,10 +9,15 @@ public class enemyCombat : MonoBehaviour, IDamageable
     public simplesAttributes simplesAtr;
 
     private SpriteRenderer spriteProps;
+    public TextMeshPro inVidaText;
 
     public void Awake()
     {
         spriteProps = this.gameObject.GetComponent<SpriteRenderer>();
+
+        inVidaText = this.gameObject.GetComponentInChildren<TextMeshPro>();
+
+        //DrawMostradorVida();
     }
     public void TakeDamage(float DamageAmount)
     {
@@ -25,6 +31,10 @@ public class enemyCombat : MonoBehaviour, IDamageable
         
             Destroy(this.gameObject);
         }
+
+        //tring healthString = ToString(simplesAtr.currentHealth);
+
+        inVidaText.SetText(simplesAtr.currentHealth.ToString());
     }
 
     public void OnCollisionEnter2D(UnityEngine.Collision2D collision)

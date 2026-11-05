@@ -14,5 +14,5 @@ public class PlayerAttributes : MonoBehaviour
     public Collider2D hitBox;
     public Collider2D damageBox;
     public float danoAtual;
-    
+    public float atkArea;
 }

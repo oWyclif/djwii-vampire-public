@@ -16,7 +16,7 @@ public class hordaTipoComplexa : hordaBase
         Object = Resources.Load("in_complexo");
         Coord = new Vector2(5,5);
 
-        Debug.Log("Horda Complexa iniciada, objeto definido como " + this.Object);
+        //Debug.Log("Horda Complexa iniciada, objeto definido como " + this.Object);
 
         horda.CoroutineStarter(this, 
                                 Cooldown, 
