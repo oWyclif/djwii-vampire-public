@@ -209,6 +209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simplesAtr: {fileID: 1018638074722949186}
   inVidaText: {fileID: 0}
+  inMorte:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9159988120396807626
 GameObject:
   m_ObjectHideFlags: 0

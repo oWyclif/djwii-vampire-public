@@ -5,14 +5,11 @@ public class hordaTipoSimples : hordaBase
 {
     //public GameObject inimigo = Resources.Load("in_simples.prefab") as GameObject; 
 
-    public new float Cooldown        = 3f;
+    public new float Cooldown        = 0.2f;
     public new Object Object;
-    public new int Amount            = 7;
+    public new int Amount            = 20;
     public new Vector2 Coord;
     public new float Area            = 3f;
-
-
-
     public override void HordaStart(hordaManager horda)
     {
         Object = Resources.Load("in_simples");

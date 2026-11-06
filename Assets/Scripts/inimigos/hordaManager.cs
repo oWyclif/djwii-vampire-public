@@ -5,22 +5,29 @@ using System.Collections.Generic;
 public class hordaManager : MonoBehaviour
 {
     public hordaBase hordaAtual;
-
     public hordaTipoComplexa HordaComplexa = new hordaTipoComplexa();
     public hordaTipoSimples HordaSimples = new hordaTipoSimples();
     IEnumerator coroutineHorda;
 
     public void Awake()
     {
-        hordaAtual = HordaComplexa;
-        hordaAtual.HordaStart(this);
+        Decisor();
     }
 
-    public void StartHorda(hordaBase horda)
+    public void Decisor()
     {
-        hordaAtual = horda;
+        float rngHorda = Random.Range(0f, 1f);
 
-        //Debug.Log("Horda definida, estamos na " + horda + " ela possui: " + horda.Amount + " Inimigos.");
+        if(rngHorda >= 0.5f)
+        {
+            hordaAtual = HordaComplexa;
+            hordaAtual.HordaStart(this);
+        }
+        else
+        {
+            hordaAtual = HordaSimples;
+            hordaAtual.HordaStart(this);
+        }
     }
 
     public void CoroutineStarter(hordaBase crHorda, 
@@ -58,6 +65,8 @@ public class hordaManager : MonoBehaviour
                 
             yield return new WaitForSeconds(Cooldown);
         }
+        yield return new WaitForSeconds(10f);
+        Decisor();
     }
 }
 

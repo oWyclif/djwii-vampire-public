@@ -14,6 +14,7 @@ public class PlayerCombat : MonoBehaviour, IDamageable
 
     public void FixedUpdate()
     {
+        //O ataque acontece a cada frame. Isso pode ser modificado depois, criando uma coroutine que é roda um loop a cada 2seg, por exemplo.
         Attack();
     }
 
@@ -38,13 +39,11 @@ public class PlayerCombat : MonoBehaviour, IDamageable
     public void TakeDamage(float DamageAmount)
     {
         playerAtr.currentHealth -= DamageAmount;
-
         Debug.Log("Player sofreu dano");
 
         if (playerAtr.currentHealth <= 0 )
         {
             Debug.Log("Player morto.");
-        
             SceneManager.LoadScene("scene_level");
         }
     }

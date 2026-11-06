@@ -6,15 +6,10 @@ public class simplesStateMov : simplesBaseState
 {
     //Transform simplesTransform;
     float simplesMoverSpeed = 0.01f;
-
-
     public GameObject player; 
     public Transform playerTransform;
-
-    
+   
     public override void EnterState(simplesStateManager simples){
-
-
         player = GameObject.Find("player"); 
         playerTransform = player.GetComponent<Transform>(); 
 
