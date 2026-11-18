@@ -21,14 +21,12 @@ public class simplesStateIdle : simplesBaseState
 
     }
     
-    public override void OnTriggerEnter(simplesStateManager simples, Collider2D collider){
+    public override void OnTriggerEnter(simplesStateManager simples, Collider2D collider)
+    {
         
     }
-
-
     void Escolher(simplesStateManager simples)
     {
         simples.SwitchState(simples.MovState);
     }
-
 }

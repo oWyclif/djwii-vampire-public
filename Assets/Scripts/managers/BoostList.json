@@ -1,0 +1,47 @@
+{
+    "boost": 
+    [
+    {
+        "boostID": 1,
+        "boostNome": "DanoLeve",
+        "categoria": "A",
+        "boostValue": 0.01,
+        "boostArea": "Dano"
+    },
+    {
+        "boostID": 2,
+        "boostNome": "DanoMedio",
+        "categoria": "B",
+        "boostValue": 0.1,
+        "boostArea": "Dano"
+    },
+    {
+        "boostID": 3,
+        "boostNome": "DanoPesado",
+        "categoria": "C",
+        "boostValue": 0.3,
+        "boostArea": "Dano"
+    },
+    {
+        "boostID": 4,
+        "boostNome": "VelocidadeBaixa",
+        "categoria": "A",
+        "boostValue": 0.01,
+        "boostArea": "Velocidade"
+    },
+    {
+        "boostID": 5,
+        "boostNome": "VelocidadeMedia",
+        "categoria": "B",
+        "boostValue": 0.1,
+        "boostArea": "Velocidade"
+    },
+    {
+        "boostID": 6,
+        "boostNome": "VelocidadeAlta",
+        "categoria": "C",
+        "boostValue": 0.3,
+        "boostArea": "Velocidade"
+    }
+    ]
+}
